@@ -259,7 +259,7 @@ Passwort: 1234
 
 
 ## Autor ##
-
+H.B
 Schulvorzeigeprojekt im Bereich Frontend Development.
 
 Projekt:
