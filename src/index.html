@@ -1,13 +1,76 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
+
 <head>
   <meta charset="utf-8">
-  <title>Fitnessstudio</title>
+
+  <title>
+    WORKOUT Fitness-Studio
+  </title>
+
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
 </head>
+
 <body>
+
   <app-root></app-root>
+
+
+  <script>
+    document.addEventListener("click", function (event) {
+
+      const link = event.target.closest(".top-links a");
+
+      if (!link) {
+        return;
+      }
+
+      const url = new URL(link.href);
+
+      if (!url.hash) {
+        return;
+      }
+
+      const targetId = url.hash.substring(1);
+
+      const target = document.getElementById(targetId);
+
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+
+      const navigationHeight = 90;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        navigationHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+      history.replaceState(
+        null,
+        "",
+        `/members#${targetId}`
+      );
+    });
+  </script>
+
 </body>
+
 </html>

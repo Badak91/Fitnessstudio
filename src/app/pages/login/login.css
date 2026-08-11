@@ -1,0 +1,197 @@
+.login-page {
+  position: relative;
+  min-height: 100vh;
+
+  background-image: url("/assets/images/workout.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  overflow: hidden;
+}
+
+.login-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.35),
+    rgba(255, 0, 0, 0.2)
+  );
+
+  z-index: 0;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 460px;
+
+  padding: 45px 35px;
+
+  color: white;
+
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 25px;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+.brand {
+  margin: 0 0 12px;
+
+  color: red;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.login-card h1 {
+  margin: 0 0 15px;
+
+  font-size: 56px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.login-text {
+  margin-bottom: 30px;
+
+  color: #e5e5e5;
+
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: red;
+
+  font-weight: 900;
+}
+
+.form-group input {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  background-color: white;
+
+  border: 2px solid transparent;
+  border-radius: 14px;
+
+  outline: none;
+
+  font-size: 17px;
+
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: red;
+
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.18);
+}
+
+#login-error {
+  min-height: 24px;
+
+  margin-bottom: 15px;
+
+  color: red;
+
+  font-weight: 800;
+}
+
+.login-button {
+  width: 100%;
+
+  padding: 15px 20px;
+
+  color: white;
+  background-color: red;
+
+  border: none;
+  border-radius: 999px;
+
+  font-size: 17px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.login-button:hover {
+  color: #111;
+  background-color: white;
+
+  transform: translateY(-3px);
+}
+
+.hint {
+  margin-top: 22px;
+
+  color: #cccccc;
+
+  font-size: 15px;
+}
+
+.back-link {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  color: white;
+
+  text-decoration: none;
+  font-weight: 800;
+
+  opacity: 0.85;
+
+  transition: 0.2s;
+}
+
+.back-link:hover {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 20px;
+  }
+
+  .login-card {
+    padding: 35px 25px;
+  }
+
+  .login-card h1 {
+    font-size: 42px;
+  }
+}

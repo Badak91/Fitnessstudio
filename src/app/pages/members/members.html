@@ -1,0 +1,2194 @@
+<header class="top-nav">
+  <a href="/" class="top-logo">WORKOUT</a>
+
+<nav class="top-links" aria-label="Hauptnavigation">
+
+  <a href="/members#statistics-area">
+    Statistik
+  </a>
+
+  <a href="/members#members-area">
+    Mitglieder
+  </a>
+
+  <a href="/members#courses-area">
+    Kurse
+  </a>
+
+  <a href="/members#bookings-area">
+    Buchungen
+  </a>
+
+</nav>
+
+  <button type="button" class="btn-nav-logout" id="logout-button">
+    Logout
+  </button>
+</header>
+
+<main class="members-page">
+
+  <!-- ============================= -->
+  <!-- KOPFBEREICH -->
+  <!-- ============================= -->
+
+  <section class="members-header">
+
+    <a href="/" class="back-link">
+      ← Zurück zur Startseite
+    </a>
+
+    <p class="brand">
+      WORKOUT Fitness-Studio
+    </p>
+
+    <h1>
+      Mitgliederverwaltung
+    </h1>
+
+    <p class="header-text">
+      Verwalte Mitglieder, Beiträge, Tarife, Kurse und Buchungen an einem Ort.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        type="search"
+        id="member-search"
+        placeholder="Mitglied, Mitgliedsnummer, Stadt, Tarif oder Trainingsplan suchen..."
+        autocomplete="off"
+      />
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================= -->
+  <!-- DASHBOARD -->
+  <!-- ============================= -->
+
+  <section
+    class="dashboard-grid"
+    aria-label="Übersicht"
+  >
+
+    <article class="dashboard-card">
+
+      <span
+        class="dashboard-number"
+        id="dashboard-members"
+      >
+        0
+      </span>
+
+      <span class="dashboard-label">
+        Mitglieder
+      </span>
+
+    </article>
+
+
+    <article class="dashboard-card">
+
+      <span
+        class="dashboard-number"
+        id="dashboard-cities"
+      >
+        0
+      </span>
+
+      <span class="dashboard-label">
+        Städte
+      </span>
+
+    </article>
+
+
+    <article class="dashboard-card">
+
+      <span
+        class="dashboard-number"
+        id="dashboard-plans"
+      >
+        0
+      </span>
+
+      <span class="dashboard-label">
+        Trainingspläne
+      </span>
+
+    </article>
+
+
+    <article class="dashboard-card">
+
+      <span
+        class="dashboard-number"
+        id="dashboard-payments"
+      >
+        0
+      </span>
+
+      <span class="dashboard-label">
+        Offene Beiträge
+      </span>
+
+    </article>
+
+
+    <article class="dashboard-card">
+
+      <span
+        class="dashboard-number"
+        id="dashboard-bookings"
+      >
+        0
+      </span>
+
+      <span class="dashboard-label">
+        Buchungen
+      </span>
+
+    </article>
+
+  </section>
+
+
+  <!-- ============================= -->
+  <!-- STATISTIK -->
+  <!-- ============================= -->
+
+  <section
+    class="statistics-card"
+    id="statistics-area"
+  >
+
+    <div class="statistics-header">
+
+      <p class="brand">
+        WORKOUT Auswertung
+      </p>
+
+      <h2>
+        Statistik
+      </h2>
+
+      <p class="header-text">
+        Aktuelle Auswertung der Beiträge, Trainingspläne und Kursauslastung.
+      </p>
+
+    </div>
+
+
+    <div class="statistics-summary-grid">
+
+      <article class="statistics-summary-card">
+
+        <span
+          class="statistics-summary-number"
+          id="statistics-payment-rate"
+        >
+          0 %
+        </span>
+
+        <span class="statistics-summary-label">
+          Beiträge bezahlt
+        </span>
+
+      </article>
+
+
+      <article class="statistics-summary-card">
+
+        <span
+          class="statistics-summary-text"
+          id="statistics-popular-plan"
+        >
+          Keine Daten
+        </span>
+
+        <span class="statistics-summary-label">
+          Beliebtester Trainingsplan
+        </span>
+
+      </article>
+
+
+      <article class="statistics-summary-card">
+
+        <span
+          class="statistics-summary-number"
+          id="statistics-course-usage"
+        >
+          0 %
+        </span>
+
+        <span class="statistics-summary-label">
+          Durchschnittliche Kursauslastung
+        </span>
+
+      </article>
+
+    </div>
+
+
+    <div class="statistics-grid">
+
+      <article class="chart-card">
+
+        <div class="chart-card-header">
+
+          <p class="chart-overline">
+            Beiträge
+          </p>
+
+          <h3>
+            Zahlungsstatus
+          </h3>
+
+        </div>
+
+        <div
+          class="bar-chart"
+          id="payment-chart"
+        ></div>
+
+      </article>
+
+
+      <article class="chart-card">
+
+        <div class="chart-card-header">
+
+          <p class="chart-overline">
+            Mitglieder
+          </p>
+
+          <h3>
+            Trainingspläne
+          </h3>
+
+        </div>
+
+        <div
+          class="bar-chart"
+          id="training-chart"
+        ></div>
+
+      </article>
+
+
+      <article class="chart-card">
+
+        <div class="chart-card-header">
+
+          <p class="chart-overline">
+            Kurse
+          </p>
+
+          <h3>
+            Kursauslastung
+          </h3>
+
+        </div>
+
+        <div
+          class="bar-chart"
+          id="course-chart"
+        ></div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================= -->
+  <!-- MITGLIEDER -->
+  <!-- ============================= -->
+
+  <section
+    class="members-card"
+    id="members-area"
+  >
+
+    <div class="members-card-header">
+
+      <div>
+
+        <p class="section-kicker">
+          Mitgliederverwaltung
+        </p>
+
+        <h2>
+          Aktive Mitglieder
+        </h2>
+
+      </div>
+
+
+      <div class="members-card-actions">
+
+        <span id="member-count">
+          0 Mitglieder
+        </span>
+
+        <button
+          type="button"
+          class="btn-sort"
+          id="sort-name-button"
+        >
+          Name A–Z
+        </button>
+
+        <button
+          type="button"
+          class="btn-reset"
+          id="reset-button"
+        >
+          Reset
+        </button>
+
+        <button
+          type="button"
+          class="btn-add-member"
+          data-bs-toggle="modal"
+          data-bs-target="#addMemberModal"
+        >
+          + Mitglied hinzufügen
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- FILTER -->
+
+    <div class="member-tools">
+
+      <div class="member-filter-group">
+
+        <label
+          for="payment-filter"
+          class="member-filter-label"
+        >
+          Zahlungsstatus
+        </label>
+
+        <select
+          id="payment-filter"
+          class="member-filter-select"
+        >
+          <option value="Alle">
+            Alle Zahlungen
+          </option>
+
+          <option value="Bezahlt">
+            Bezahlt
+          </option>
+
+          <option value="Offen">
+            Offen
+          </option>
+
+          <option value="Überfällig">
+            Überfällig
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="member-filter-group">
+
+        <label
+          for="training-filter"
+          class="member-filter-label"
+        >
+          Trainingsplan
+        </label>
+
+        <select
+          id="training-filter"
+          class="member-filter-select"
+        >
+
+          <option value="Alle">
+            Alle Trainingspläne
+          </option>
+
+          <option value="Ganzkörpertraining">
+            Ganzkörpertraining
+          </option>
+
+          <option value="Muskelaufbau">
+            Muskelaufbau
+          </option>
+
+          <option value="Ausdauer &amp; Cardio">
+            Ausdauer &amp; Cardio
+          </option>
+
+          <option value="Gewichtsreduktion">
+            Gewichtsreduktion
+          </option>
+
+          <option value="Personal Training">
+            Personal Training
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="member-filter-group">
+
+        <label
+          for="tariff-filter"
+          class="member-filter-label"
+        >
+          Tarif
+        </label>
+
+        <select
+          id="tariff-filter"
+          class="member-filter-select"
+        >
+
+          <option value="Alle">
+            Alle Tarife
+          </option>
+
+          <option value="Basic">
+            Basic
+          </option>
+
+          <option value="Premium">
+            Premium
+          </option>
+
+          <option value="VIP">
+            VIP
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="member-tools-buttons">
+
+        <button
+          type="button"
+          id="clear-filters-button"
+          class="btn-clear-filters"
+        >
+          ↻ Filter zurücksetzen
+        </button>
+
+        <button
+          type="button"
+          id="export-members-button"
+          class="btn-export-members"
+        >
+          ⇩ CSV exportieren
+        </button>
+
+        <button
+          type="button"
+          id="backup-data-button"
+          class="btn-backup-data"
+        >
+          JSON sichern
+        </button>
+
+        <button
+          type="button"
+          id="import-data-button"
+          class="btn-import-data"
+        >
+          JSON importieren
+        </button>
+
+        <input
+          type="file"
+          id="import-data-input"
+          accept="application/json,.json"
+          hidden
+        />
+
+      </div>
+
+    </div>
+
+
+    <!-- MITGLIEDERLISTE -->
+
+    <ul
+      id="list-group"
+      class="members-list"
+    ></ul>
+
+
+    <!-- PAGINIERUNG -->
+
+    <div class="pagination-bar">
+
+      <div class="pagination-size">
+
+        <label for="members-per-page">
+          Einträge pro Seite
+        </label>
+
+        <select id="members-per-page">
+
+          <option value="5">
+            5
+          </option>
+
+          <option value="10">
+            10
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="pagination-controls">
+
+        <button
+          type="button"
+          id="previous-page-button"
+        >
+          Zurück
+        </button>
+
+        <div
+          id="pagination-pages"
+          class="pagination-pages"
+        ></div>
+
+        <button
+          type="button"
+          id="next-page-button"
+        >
+          Weiter
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================= -->
+  <!-- KURSE -->
+  <!-- ============================= -->
+
+  <section
+    class="courses-card"
+    id="courses-area"
+  >
+
+    <div class="courses-header courses-header-row">
+
+      <div>
+
+        <p class="brand">
+          WORKOUT Kurse
+        </p>
+
+        <h2>
+          Kursplan
+        </h2>
+
+        <p class="header-text">
+          Verwalte Kurse und buche freie Plätze für Mitglieder.
+        </p>
+
+      </div>
+
+
+      <div class="section-actions">
+
+        <button
+          type="button"
+          class="btn-print"
+          id="print-courses-button"
+        >
+          Kursliste drucken
+        </button>
+
+        <button
+          type="button"
+          class="btn-add-course"
+          data-bs-toggle="modal"
+          data-bs-target="#addCourseModal"
+        >
+          + Kurs hinzufügen
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="courses-grid"
+      id="course-list"
+    ></div>
+
+  </section>
+
+
+  <!-- ============================= -->
+  <!-- BUCHUNGEN -->
+  <!-- ============================= -->
+
+  <section
+    class="bookings-card"
+    id="bookings-area"
+  >
+
+    <div class="courses-header">
+
+      <p class="brand">
+        WORKOUT Buchungen
+      </p>
+
+      <h2>
+        Aktuelle Kursbuchungen
+      </h2>
+
+      <p class="header-text">
+        Filtere Buchungen nach Mitglied oder Kurs und storniere sie bei Bedarf.
+      </p>
+
+    </div>
+
+
+    <div class="booking-tools">
+
+      <div class="booking-filter-group booking-filter-wide">
+
+        <label for="booking-search">
+          Mitglied suchen
+        </label>
+
+        <input
+          type="search"
+          id="booking-search"
+          placeholder="Name des Mitglieds..."
+          autocomplete="off"
+        />
+
+      </div>
+
+
+      <div class="booking-filter-group">
+
+        <label for="booking-course-filter">
+          Kurs
+        </label>
+
+        <select id="booking-course-filter">
+
+          <option value="Alle">
+            Alle Kurse
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        type="button"
+        id="clear-booking-filters-button"
+        class="btn-clear-filters"
+      >
+        Buchungsfilter zurücksetzen
+      </button>
+
+
+      <span
+        class="booking-count"
+        id="booking-count"
+      >
+        0 Buchungen
+      </span>
+
+    </div>
+
+
+    <ul
+      class="booking-list"
+      id="booking-list"
+    ></ul>
+
+  </section>
+
+</main>
+
+
+<!-- ============================= -->
+<!-- TOAST UND DRUCKBEREICH -->
+<!-- ============================= -->
+
+<div
+  id="toast-message"
+  class="toast-message"
+  aria-live="polite"
+></div>
+
+<section
+  id="print-area"
+  class="print-area"
+  aria-hidden="true"
+></section>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: MITGLIED DETAILS -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="memberModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5
+          class="modal-title"
+          id="modal-name"
+        >
+          Mitglied
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <div class="details-grid">
+
+          <p>
+            <strong>Mitgliedsnummer:</strong>
+            <span id="modal-member-number"></span>
+          </p>
+
+          <p>
+            <strong>Eintrittsdatum:</strong>
+            <span id="modal-entry-date"></span>
+          </p>
+
+          <p>
+            <strong>E-Mail:</strong>
+            <span id="modal-email"></span>
+          </p>
+
+          <p>
+            <strong>Telefon:</strong>
+            <span id="modal-phone"></span>
+          </p>
+
+          <p>
+            <strong>Website:</strong>
+            <span id="modal-website"></span>
+          </p>
+
+          <p>
+            <strong>Stadt:</strong>
+            <span id="modal-city"></span>
+          </p>
+
+          <p>
+            <strong>Firma:</strong>
+            <span id="modal-company"></span>
+          </p>
+
+          <p>
+            <strong>Tarif:</strong>
+            <span id="modal-tariff"></span>
+          </p>
+
+          <p>
+            <strong>Monatsbeitrag:</strong>
+            <span id="modal-monthly-fee"></span>
+          </p>
+
+          <p>
+            <strong>Zahlungsstatus:</strong>
+            <span id="modal-payment-status"></span>
+          </p>
+
+        </div>
+
+
+        <div class="training-box">
+
+          <h6>
+            Trainingsplan
+          </h6>
+
+          <p id="modal-training-plan"></p>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button
+          type="button"
+          class="btn-print"
+          id="print-member-button"
+        >
+          Mitglied drucken
+        </button>
+
+        <button
+          type="button"
+          class="btn-modal-close"
+          data-bs-dismiss="modal"
+        >
+          Schließen
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: MITGLIED HINZUFÜGEN -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="addMemberModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Neues Mitglied
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <form
+        id="add-member-form"
+        novalidate
+      >
+
+        <div class="modal-body form-grid">
+
+          <div class="form-group">
+
+            <label for="new-name">
+              Name
+            </label>
+
+            <input
+              type="text"
+              id="new-name"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-name-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-email">
+              E-Mail
+            </label>
+
+            <input
+              type="email"
+              id="new-email"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-email-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-phone">
+              Telefon
+            </label>
+
+            <input
+              type="text"
+              id="new-phone"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-phone-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-city">
+              Stadt
+            </label>
+
+            <input
+              type="text"
+              id="new-city"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-city-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-company">
+              Firma
+            </label>
+
+            <input
+              type="text"
+              id="new-company"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-company-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-entry-date">
+              Eintrittsdatum
+            </label>
+
+            <input
+              type="date"
+              id="new-entry-date"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-entry-date-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-training-plan">
+              Trainingsplan
+            </label>
+
+            <select
+              id="new-training-plan"
+              required
+            >
+
+              <option value="Ganzkörpertraining">
+                Ganzkörpertraining
+              </option>
+
+              <option value="Muskelaufbau">
+                Muskelaufbau
+              </option>
+
+              <option value="Ausdauer &amp; Cardio">
+                Ausdauer &amp; Cardio
+              </option>
+
+              <option value="Gewichtsreduktion">
+                Gewichtsreduktion
+              </option>
+
+              <option value="Personal Training">
+                Personal Training
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-payment-status">
+              Zahlungsstatus
+            </label>
+
+            <select
+              id="new-payment-status"
+              required
+            >
+
+              <option value="Bezahlt">
+                Bezahlt
+              </option>
+
+              <option value="Offen">
+                Offen
+              </option>
+
+              <option value="Überfällig">
+                Überfällig
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-tariff">
+              Tarif
+            </label>
+
+            <select
+              id="new-tariff"
+              required
+            >
+
+              <option value="Basic">
+                Basic
+              </option>
+
+              <option value="Premium">
+                Premium
+              </option>
+
+              <option value="VIP">
+                VIP
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-monthly-fee">
+              Monatsbeitrag in EUR
+            </label>
+
+            <input
+              type="number"
+              id="new-monthly-fee"
+              min="0"
+              step="0.01"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-monthly-fee-error"
+            ></small>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+          <button
+            type="button"
+            class="btn-modal-close"
+            data-bs-dismiss="modal"
+          >
+            Abbrechen
+          </button>
+
+          <button
+            type="submit"
+            class="btn-save-member"
+          >
+            Speichern
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: MITGLIED BEARBEITEN -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="editMemberModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Mitglied bearbeiten
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <form
+        id="edit-member-form"
+        novalidate
+      >
+
+        <div class="modal-body form-grid">
+
+          <div class="form-group">
+
+            <label for="edit-member-number">
+              Mitgliedsnummer
+            </label>
+
+            <input
+              type="text"
+              id="edit-member-number"
+              readonly
+            />
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-entry-date">
+              Eintrittsdatum
+            </label>
+
+            <input
+              type="date"
+              id="edit-entry-date"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-entry-date-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-name">
+              Name
+            </label>
+
+            <input
+              type="text"
+              id="edit-name"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-name-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-email">
+              E-Mail
+            </label>
+
+            <input
+              type="email"
+              id="edit-email"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-email-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-phone">
+              Telefon
+            </label>
+
+            <input
+              type="text"
+              id="edit-phone"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-phone-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-city">
+              Stadt
+            </label>
+
+            <input
+              type="text"
+              id="edit-city"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-city-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-company">
+              Firma
+            </label>
+
+            <input
+              type="text"
+              id="edit-company"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-company-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-training-plan">
+              Trainingsplan
+            </label>
+
+            <select
+              id="edit-training-plan"
+              required
+            >
+
+              <option value="Ganzkörpertraining">
+                Ganzkörpertraining
+              </option>
+
+              <option value="Muskelaufbau">
+                Muskelaufbau
+              </option>
+
+              <option value="Ausdauer &amp; Cardio">
+                Ausdauer &amp; Cardio
+              </option>
+
+              <option value="Gewichtsreduktion">
+                Gewichtsreduktion
+              </option>
+
+              <option value="Personal Training">
+                Personal Training
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-payment-status">
+              Zahlungsstatus
+            </label>
+
+            <select
+              id="edit-payment-status"
+              required
+            >
+
+              <option value="Bezahlt">
+                Bezahlt
+              </option>
+
+              <option value="Offen">
+                Offen
+              </option>
+
+              <option value="Überfällig">
+                Überfällig
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-tariff">
+              Tarif
+            </label>
+
+            <select
+              id="edit-tariff"
+              required
+            >
+
+              <option value="Basic">
+                Basic
+              </option>
+
+              <option value="Premium">
+                Premium
+              </option>
+
+              <option value="VIP">
+                VIP
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-monthly-fee">
+              Monatsbeitrag in EUR
+            </label>
+
+            <input
+              type="number"
+              id="edit-monthly-fee"
+              min="0"
+              step="0.01"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-monthly-fee-error"
+            ></small>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+          <button
+            type="button"
+            class="btn-modal-close"
+            data-bs-dismiss="modal"
+          >
+            Abbrechen
+          </button>
+
+          <button
+            type="submit"
+            class="btn-save-member"
+          >
+            Änderungen speichern
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: KURS BUCHEN -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="courseBookingModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Kurs buchen
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <form id="course-booking-form">
+
+        <div class="modal-body">
+
+          <p
+            id="selected-course-info"
+            class="selected-course-info"
+          ></p>
+
+
+          <div class="form-group">
+
+            <label for="booking-member-select">
+              Mitglied auswählen
+            </label>
+
+            <select
+              id="booking-member-select"
+              required
+            ></select>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+          <button
+            type="button"
+            class="btn-modal-close"
+            data-bs-dismiss="modal"
+          >
+            Abbrechen
+          </button>
+
+          <button
+            type="submit"
+            class="btn-save-member"
+          >
+            Kurs buchen
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: MITGLIED LÖSCHEN -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="deleteMemberModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Mitglied löschen
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <p>
+          Möchtest du
+          <strong id="delete-member-name"></strong>
+          wirklich löschen?
+        </p>
+
+        <p class="delete-warning">
+          Die Buchungen dieses Mitglieds werden ebenfalls entfernt.
+        </p>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button
+          type="button"
+          class="btn-modal-close"
+          data-bs-dismiss="modal"
+        >
+          Abbrechen
+        </button>
+
+        <button
+          type="button"
+          class="btn-delete-confirm"
+          id="confirm-delete-button"
+        >
+          Ja, löschen
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: RESET -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="resetModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Daten zurücksetzen
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <p>
+          Möchtest du alle lokalen Änderungen löschen?
+        </p>
+
+        <p class="delete-warning">
+          Mitglieder, Kurse und Buchungen werden zurückgesetzt.
+        </p>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button
+          type="button"
+          class="btn-modal-close"
+          data-bs-dismiss="modal"
+        >
+          Abbrechen
+        </button>
+
+        <button
+          type="button"
+          class="btn-delete-confirm"
+          id="confirm-reset-button"
+        >
+          Ja, zurücksetzen
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: KURS HINZUFÜGEN -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="addCourseModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Neuen Kurs hinzufügen
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <form
+        id="add-course-form"
+        novalidate
+      >
+
+        <div class="modal-body">
+
+          <div class="form-group">
+
+            <label for="new-course-name">
+              Kursname
+            </label>
+
+            <input
+              type="text"
+              id="new-course-name"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-course-name-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-course-day">
+              Wochentag
+            </label>
+
+            <select
+              id="new-course-day"
+              required
+            >
+
+              <option value="Montag">
+                Montag
+              </option>
+
+              <option value="Dienstag">
+                Dienstag
+              </option>
+
+              <option value="Mittwoch">
+                Mittwoch
+              </option>
+
+              <option value="Donnerstag">
+                Donnerstag
+              </option>
+
+              <option value="Freitag">
+                Freitag
+              </option>
+
+              <option value="Samstag">
+                Samstag
+              </option>
+
+              <option value="Sonntag">
+                Sonntag
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-course-time">
+              Uhrzeit
+            </label>
+
+            <input
+              type="time"
+              id="new-course-time"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-course-time-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-course-trainer">
+              Trainer
+            </label>
+
+            <input
+              type="text"
+              id="new-course-trainer"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-course-trainer-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="new-course-capacity">
+              Gesamtplätze
+            </label>
+
+            <input
+              type="number"
+              id="new-course-capacity"
+              min="1"
+              value="10"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="new-course-capacity-error"
+            ></small>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+          <button
+            type="button"
+            class="btn-modal-close"
+            data-bs-dismiss="modal"
+          >
+            Abbrechen
+          </button>
+
+          <button
+            type="submit"
+            class="btn-save-member"
+          >
+            Kurs speichern
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: KURS BEARBEITEN -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="editCourseModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Kurs bearbeiten
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <form
+        id="edit-course-form"
+        novalidate
+      >
+
+        <div class="modal-body">
+
+          <div class="form-group">
+
+            <label for="edit-course-name">
+              Kursname
+            </label>
+
+            <input
+              type="text"
+              id="edit-course-name"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-course-name-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-course-day">
+              Wochentag
+            </label>
+
+            <select
+              id="edit-course-day"
+              required
+            >
+
+              <option value="Montag">
+                Montag
+              </option>
+
+              <option value="Dienstag">
+                Dienstag
+              </option>
+
+              <option value="Mittwoch">
+                Mittwoch
+              </option>
+
+              <option value="Donnerstag">
+                Donnerstag
+              </option>
+
+              <option value="Freitag">
+                Freitag
+              </option>
+
+              <option value="Samstag">
+                Samstag
+              </option>
+
+              <option value="Sonntag">
+                Sonntag
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-course-time">
+              Uhrzeit
+            </label>
+
+            <input
+              type="time"
+              id="edit-course-time"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-course-time-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-course-trainer">
+              Trainer
+            </label>
+
+            <input
+              type="text"
+              id="edit-course-trainer"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-course-trainer-error"
+            ></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="edit-course-capacity">
+              Gesamtplätze
+            </label>
+
+            <input
+              type="number"
+              id="edit-course-capacity"
+              min="1"
+              required
+            />
+
+            <small
+              class="field-error"
+              id="edit-course-capacity-error"
+            ></small>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+          <button
+            type="button"
+            class="btn-modal-close"
+            data-bs-dismiss="modal"
+          >
+            Abbrechen
+          </button>
+
+          <button
+            type="submit"
+            class="btn-save-member"
+          >
+            Änderungen speichern
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MODAL: KURS LÖSCHEN -->
+<!-- ===================================================== -->
+
+<div
+  class="modal fade"
+  id="deleteCourseModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content workout-modal">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+          Kurs löschen
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Schließen"
+        ></button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <p>
+          Möchtest du den Kurs
+          <strong id="delete-course-name"></strong>
+          wirklich löschen?
+        </p>
+
+        <p class="delete-warning">
+          Alle Buchungen dieses Kurses werden ebenfalls entfernt.
+        </p>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button
+          type="button"
+          class="btn-modal-close"
+          data-bs-dismiss="modal"
+        >
+          Abbrechen
+        </button>
+
+        <button
+          type="button"
+          class="btn-delete-confirm"
+          id="confirm-delete-course-button"
+        >
+          Ja, Kurs löschen
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
