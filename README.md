@@ -1,59 +1,267 @@
-# Fitnessstudio
+# WORKOUT Fitness-Studio #
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.20.
+## Projektbeschreibung ##
 
-## Development server
+WORKOUT Fitness-Studio ist eine Angular-Webanwendung zur Verwaltung eines Fitnessstudios.
 
-To start a local development server, run:
+Die Anwendung enthält eine Startseite, einen Login-Bereich und eine umfangreiche Mitgliederverwaltung.
 
-```bash
-ng serve
-```
+Mitglieder, Kurse und Buchungen können verwaltet und ausgewertet werden.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Funktionen ##
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+-- Mitgliederverwaltung --
 
-```bash
-ng generate component component-name
-```
+- Mitglieder anzeigen
+- Mitglieder hinzufügen
+- M1itglieder bearbeiten
+- Mitglieder löschen
+- Mitgliederdetails anzeigen
+- Mitglieder suchen
+- Nach Zahlungsstatus filtern
+- Nach Trainingsplan filtern
+- Nach Tarif filtern
+- Mitglieder alphabetisch sortieren
+- Pagination mit 5 oder 10 Mitgliedern pro Seite
+- Mitgliederdetails drucken
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Mitgliederinformationen
 
-```bash
-ng generate --help
-```
+Für Mitglieder werden unter anderem folgende Daten gespeichert:
 
-## Building
+- Mitgliedsnummer
+- Name
+- E-Mail
+- Telefonnummer
+- Stadt
+- Firma
+- Eintrittsdatum
+- Trainingsplan
+- Tarif
+- Monatsbeitrag
+- Zahlungsstatus
 
-To build the project run:
+Die Mitgliedsnummer wird automatisch erstellt.
 
-```bash
-ng build
-```
+Tarife
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Die Anwendung unterstützt folgende Tarife:
 
-## Running unit tests
+- Basic
+- Premium
+- VIP
+- Trainingspläne
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Folgende Trainingspläne stehen zur Verfügung:
 
-```bash
-ng test
-```
+- Ganzkörpertraining
+- Muskelaufbau
+- Ausdauer & Cardio
+- Gewichtsreduktion
+- Personal Training
+- Kursverwaltung
 
-## Running end-to-end tests
+Kurse können vollständig verwaltet werden.
 
-For end-to-end (e2e) testing, run:
+Funktionen:
 
-```bash
-ng e2e
-```
+- Kurse anzeigen
+- Kurs hinzufügen
+- Kurs bearbeiten
+- Kurs löschen
+- Kurs buchen
+- Buchung stornieren
+- Freie Plätze anzeigen
+- Kurskapazität verwalten
+- Kursliste drucken
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Ein Kurs enthält beispielsweise:
 
-## Additional Resources
+- Kursname
+- Wochentag
+- Uhrzeit
+- Trainer
+- Gesamtplätze
+- Freie Plätze
+- Buchungen
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Mitglieder können für Kurse angemeldet werden.
+
+Die Anwendung verhindert doppelte Buchungen desselben Mitglieds für denselben Kurs.
+
+Beim Buchen wird automatisch ein freier Platz abgezogen.
+
+Beim Stornieren wird der Platz wieder freigegeben.
+
+Dashboard und Statistik
+
+Die Anwendung zeigt verschiedene Kennzahlen an.
+
+Dazu gehören:
+
+- Anzahl der Mitglieder
+- Anzahl der Städte
+- Anzahl der Trainingspläne
+- Offene Beiträge
+- Anzahl der Buchungen
+- Anteil bezahlter Beiträge
+- Beliebtester Trainingsplan
+- Durchschnittliche Kursauslastung
+
+Zusätzlich werden Diagramme für folgende Bereiche angezeigt:
+
+- Zahlungsstatus
+- Trainingspläne
+- Kursauslastung
+- Daten speichern
+
+Die Daten werden im Browser mit localStorage gespeichert.
+
+Dadurch bleiben Änderungen auch nach dem Neuladen der Seite erhalten.
+
+Gespeichert werden:
+
+- Mitglieder
+- Kurse
+- Buchungen
+- Import und Export
+
+Die Anwendung unterstützt verschiedene Möglichkeiten zur Datensicherung.
+
+CSV-Export
+
+Mitglieder können als CSV-Datei exportiert werden.
+
+JSON-Sicherung
+
+Mitglieder, Kurse und Buchungen können gemeinsam als JSON-Datei gesichert werden.
+
+JSON-Import
+
+Eine zuvor gespeicherte JSON-Datei kann wieder importiert werden.
+
+Reset
+
+Mit der Reset-Funktion können die lokalen Änderungen zurückgesetzt werden.
+
+Dabei werden gespeicherte Mitglieder, Kurse und Buchungen zurückgesetzt.
+
+## Verwendete Technologien ##
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Bootstrap
+- JSONPlaceholder API
+- LocalStorage
+- SessionStorage
+- API
+
+Für die ursprünglichen Mitgliederdaten wird folgende öffentliche API verwendet:
+
+https://jsonplaceholder.typicode.com/users
+
+Die API-Daten werden innerhalb der Anwendung um fitnessstudio-spezifische Informationen erweitert.
+
+## Projektstruktur ##
+
+Fitnessstudio
+│
+├── public
+│   └── assets
+│       └── images
+│           └── workout.webp
+│
+├── src
+│   ├── app
+│   │   ├── guards
+│   │   │   └── auth.guard.ts
+│   │   │
+│   │   ├── pages
+│   │   │   ├── home
+│   │   │   │   ├── home.ts
+│   │   │   │   ├── home.html
+│   │   │   │   └── home.css
+│   │   │   │
+│   │   │   ├── login
+│   │   │   │   ├── login.ts
+│   │   │   │   ├── login.html
+│   │   │   │   └── login.css
+│   │   │   │
+│   │   │   └── members
+│   │   │       ├── members.ts
+│   │   │       ├── members.html
+│   │   │       └── members.css
+│   │   │
+│   │   ├── app.config.ts
+│   │   ├── app.routes.ts
+│   │   ├── app.ts
+│   │   ├── app.html
+│   │   └── app.css
+│   │
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+│
+├── angular.json
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
+
+
+## Projekt installieren ##
+
+Nach dem Klonen des Repositorys müssen zuerst die benötigten Pakete installiert werden.
+
+npm install
+Anwendung starten
+
+Die Anwendung kann mit folgendem Befehl gestartet werden:
+
+npm start
+
+Unter Windows kann alternativ verwendet werden:
+
+npm.cmd run start
+
+Danach ist die Anwendung normalerweise erreichbar unter:
+
+http://localhost:4200/
+
+## Startseite ##
+
+- Moderne Fitnessstudio-Startseite
+- Navigation zum Login
+- Responsive Design
+
+
+## Sicherheit ##
+
+Die Route zur Mitgliederverwaltung wird durch einen Angular Route Guard geschützt.
+
+Zusätzlich wird der Login-Status mit sessionStorage gespeichert.
+
+Nach dem Logout wird der Login-Status entfernt und der Benutzer wieder zum Login weitergeleitet.
+
+## Login ##
+
+Die Mitgliederverwaltung ist durch einen Login geschützt.
+
+Test-Zugang:
+
+Benutzername: admin
+Passwort: 1234
+
+
+
+## Autor ##
+
+Schulvorzeigeprojekt im Bereich Frontend Development.
+
+Projekt:
+
+Fitness-Studio WORKOUT
